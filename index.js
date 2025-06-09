@@ -16,7 +16,7 @@ app.post('/log', (req, res) => {
     return res.status(400).json({ error: 'Missing parameters' });
   }
 
-  const logEntry = ${new Date().toISOString()} [${level}] (${source}): ${message}\n;
+  const logEntry = ´${new Date().toISOString()} [${level}] (${source}): ${message}\n´;
 
   fs.appendFile(LOG_FILE, logEntry, (err) => {
     if (err) {
@@ -44,5 +44,5 @@ app.get('/logs', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(Logger app running on http://localhost:${PORT});
+  console.log(´Logger app running on http://localhost:${PORT}´);
 });
